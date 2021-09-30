@@ -46,14 +46,20 @@ function MeetingList() {
 
   function modify_dposts() {
 
+    Date.prototype.withoutTime = function () {
+      var d = new Date(this);
+      d.setHours(0, 0, 0, 0);
+      return d;
+    }
+
     setdposts(
       querySnapshot?.docs?.map((doc) => doc.data()).filter((post, i) => {
 
-        const startTime = new Date(post.startTime).toLocaleDateString();
-        const endTime = new Date(post.endTime).toLocaleDateString();
-        const pickedTime = value.toLocaleDateString();
+        const startTimeDate = new Date(post.startTime).withoutTime();
+        const endTimeDate = new Date(post.endTime).withoutTime();
+        const pickedTimeDate = value.withoutTime()
 
-        return (startTime <= pickedTime) && (pickedTime <= endTime);
+        return (startTimeDate <= pickedTimeDate) && (pickedTimeDate <= endTimeDate);
       })
     );
     // console.log({dposts, posts});
