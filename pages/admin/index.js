@@ -35,12 +35,15 @@ function MeetingList() {
      ref = firestore.collection('users').doc(auth.currentUser.uid).collection('posts');
 
   const query = ref.orderBy('createdAt', 'desc');
-  const [querySnapshot] = useCollection(query);
+  const [querySnapshot, loading] = useCollection(query);
   const [dposts, setdposts] = useState([]);
 
   if(!auth.currentUser) {
     return <h3> Thank You for using ! Please return again</h3>
   }
+
+  if(loading)
+    return null;
 
   const posts = querySnapshot?.docs?.map((doc) => doc.data());
 
