@@ -9,7 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
-    "@babel/runtime": "^7.15.4",
+    "@babel/runtime": "^7.16.7",
     "firebase": "^8.2.1",
     "lodash.debounce": "^4.0.8",
     "lodash.kebabcase": "^4.1.1",
