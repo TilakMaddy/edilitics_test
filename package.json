@@ -17,7 +17,7 @@
     "react": "^16.8.0",
     "react-calendar": "^3.4.0",
     "react-datepicker": "^4.2.1",
-    "react-datetime-picker": "^3.4.1",
+    "react-datetime-picker": "^3.4.3",
     "react-dom": "^16.8.0",
     "react-firebase-hooks": "^2.2.0",
     "react-firebaseui": "^5.0.2",
